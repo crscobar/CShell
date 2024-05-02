@@ -1,0 +1,66 @@
+CS361 > ls -lh
+    total 60K
+    -rw-r--r-- 1 ckanich ckanich  128 Oct 13 10:00 Makefile
+    -rw-r--r-- 1 ckanich ckanich 2.9K Oct 13 10:00 forkshell.c
+    -rw-r--r-- 1 ckanich ckanich   20 Oct 13 10:00 input
+    -rw-r--r-- 1 ckanich ckanich   37 Oct 13 10:00 input2
+    -rw-r--r-- 1 ckanich ckanich   66 Oct 13 10:00 outfile
+    -rwxr-xr-x 1 ckanich ckanich  25K Oct 13 10:00 spawnshell
+    -rw-r--r-- 1 ckanich ckanich  12K Oct 13 10:00 spawnshell.c
+
+CS361 > ls -lh > output
+
+CS361 > cat < output
+    total 60K
+    -rw-r--r-- 1 ckanich ckanich  128 Oct 13 10:00 Makefile
+    -rw-r--r-- 1 ckanich ckanich 2.9K Oct 13 10:00 forkshell.c
+    -rw-r--r-- 1 ckanich ckanich   20 Oct 13 10:00 input
+    -rw-r--r-- 1 ckanich ckanich   37 Oct 13 10:00 input2
+    -rw-r--r-- 1 ckanich ckanich   66 Oct 13 10:00 outfile
+    -rw------- 1 ckanich ckanich    0 Oct 13 10:01 output
+    -rwxr-xr-x 1 ckanich ckanich  25K Oct 13 10:00 spawnshell
+    -rw-r--r-- 1 ckanich ckanich  12K Oct 13 10:00 spawnshell.c
+
+CS361 > cat < output > output2
+
+CS361 > cat output2
+    total 60K
+    -rw-r--r-- 1 ckanich ckanich  128 Oct 13 10:00 Makefile
+    -rw-r--r-- 1 ckanich ckanich 2.9K Oct 13 10:00 forkshell.c
+    -rw-r--r-- 1 ckanich ckanich   20 Oct 13 10:00 input
+    -rw-r--r-- 1 ckanich ckanich   37 Oct 13 10:00 input2
+    -rw-r--r-- 1 ckanich ckanich   66 Oct 13 10:00 outfile
+    -rw------- 1 ckanich ckanich    0 Oct 13 10:01 output
+    -rwxr-xr-x 1 ckanich ckanich  25K Oct 13 10:00 spawnshell
+    -rw-r--r-- 1 ckanich ckanich  12K Oct 13 10:00 spawnshell.c
+
+CS361 > ls | wc
+      9       9      81ps
+
+CS361 > ls -lh | wc -l
+    10
+
+CS361 > sleep 3 ; echo hi
+    hi
+
+CS361 > ps
+    PID TTY          TIME CMD
+    10715 pts/7    00:00:00 bash
+    12361 pts/7    00:00:00 spawnshell
+    12385 pts/7    00:00:00 ps
+
+CS361 > ?
+    pid:12385 status:0
+
+CS361 > ^C   
+    caught sigint
+
+CS361 > ^Z
+    caught sigstp
+
+CS361 > exit
+    ckanich@home-desktop:~/repos/cs361-hw3$ 
+
+echo o shit its ; echo ya ; echo boi ; echo fredward the third
+
+NEED "?" AND "..... &"
