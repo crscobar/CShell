@@ -15,6 +15,9 @@
 
 #define MAXARGS 128
 #define MAXLINE 8192 /* Max text line length */
+#define GRN   "\x1B[32m"
+#define RED   "\x1B[31m"
+#define RESET "\x1B[0m"
 
 extern char **environ; /* Defined by libc */
 
@@ -51,10 +54,10 @@ void unix_error(char *msg) /* Unix-style error */
 
 static void signal_handler(int signal){
   if(signal == SIGINT){
-    write(STDOUT_FILENO, "\ncaught sigint\nCShell > ", 24);
+    write(STDOUT_FILENO, RED "\ncaught sigint\nCShell > " RESET, 29);
   }
   else if(signal == SIGTSTP){
-    write(STDIN_FILENO, "\ncaught sigstp\nCShell > ", 24);
+    write(STDIN_FILENO, RED "\ncaught sigstp\nCShell > " RESET, 29);
   }
 }
 
@@ -70,7 +73,8 @@ int main() {
     /* Read */
     actions = nullActions;
     actions2 = nullActions;
-    printf("CShell > ");
+    printf(GRN "CShell > " RESET);
+    
     result = fgets(cmdline, MAXLINE, stdin);
     if (result == NULL && ferror(stdin)) {
       fprintf(stderr, "fatal fgets error\n");
