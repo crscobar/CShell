@@ -51,10 +51,10 @@ void unix_error(char *msg) /* Unix-style error */
 
 static void signal_handler(int signal){
   if(signal == SIGINT){
-    write(STDOUT_FILENO, "\ncaught sigint\nCS361 > ", 24);
+    write(STDOUT_FILENO, "\ncaught sigint\nCShell > ", 24);
   }
   else if(signal == SIGTSTP){
-    write(STDIN_FILENO, "\ncaught sigstp\nCS361 > ", 24);
+    write(STDIN_FILENO, "\ncaught sigstp\nCShell > ", 24);
   }
 }
 
@@ -70,7 +70,7 @@ int main() {
     /* Read */
     actions = nullActions;
     actions2 = nullActions;
-    printf("CS361 > ");
+    printf("CShell > ");
     result = fgets(cmdline, MAXLINE, stdin);
     if (result == NULL && ferror(stdin)) {
       fprintf(stderr, "fatal fgets error\n");
